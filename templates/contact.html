@@ -1,0 +1,10 @@
+{% import "bootstrap/wtf.html" as wtf %}
+{% extends "base.html"%}
+
+{% block content %}
+<div class="d-flex justify-content-center">
+    <div class="contact-form">
+        {{ wtf.quick_form(form, novalidate=True, button_map={"submit": "dark"}) }}
+    </div>
+</div>
+{% endblock %}

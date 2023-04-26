@@ -1,0 +1,236 @@
+.masthead {
+    margin-top: 5%;
+    display: flex;
+}
+
+.title {
+    color: 	 #D93829;
+    text-align: center;
+    width: 10ch;
+    font-size: 80px;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: printed-text 0.5s steps(10);
+}
+
+.subtitle {
+    text-align: center;
+    width: 97ch;
+    font-size: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    opacity: 0;
+    animation: printed-subtext 5s steps(97);
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes printed-subtext{
+
+    from{
+    width: 0;
+    opacity: 1;
+    }
+    to{
+    width: 97ch;
+    opacity: 1;
+    }
+}
+
+@keyframes printed-text{
+    from{
+    width: 0;
+    opacity: 0;
+    }
+    to{
+    width: 97ch;
+    opacity: 1;
+    }
+}
+
+body {
+    background-color: #03001C;
+    color:  #44C553;
+    font-family: monospace;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar {
+    padding: 0.3% 2%;
+}
+
+.nav-link {
+    color: #44C553;
+}
+
+.container {
+    margin-top: 4%;
+}
+
+.btn {
+    color:  #44C553;
+}
+
+.container {
+    padding: 0;
+}
+
+.flexer {
+    padding: 5% 10%;
+}
+
+.post-title {
+    color:  #D93829;
+    font-weight: bold;
+    margin: 0;
+}
+
+.post-img {
+    width: 70%;
+    height: 70%;
+    display: block;
+    margin: auto;
+}
+
+a {
+    color:  #44C553;
+    text-decoration: none;
+}
+
+.login {
+    text-align: center;
+}
+
+.register {
+    margin: 5%;
+}
+
+footer {
+    margin-top: auto;
+}
+
+.footer-ul {
+  display: flex;
+  list-style: none;
+  gap: 3%;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-form {
+    width: 50%;
+}
+
+.contact-btn {
+    text-align: right;
+}
+
+
+
+.commenterImage {
+  display: inline-block;
+  vertical-align: top; /* aligns the image with the top of the text */
+}
+
+.commentText {
+  display: inline-block;
+  margin-left: 10px; /* adds some space between the image and text */
+}
+
+.commentList li {
+  list-style: none;
+}
+
+.avatar {
+    border-radius: 100%;
+}
+
+.editor {
+    padding: 0 10%;
+}
+
+.edit-btn {
+    margin-bottom: 5%;
+}
+
+.brand{
+    color: #294b60;
+}
+
+.brand:hover {
+  color: #00FFCA;
+}
+
+a:hover {
+    color: #00FFCA;
+}
+
+a:hover > .post-title {
+    color: #00FFCA;
+}
+
+.nav-link:hover {
+    color: #00FFCA;
+}
+
+hr {
+    margin: 2% auto;
+    color: #C544D9;
+    border-style: dotted;
+    border-width: 7px;
+    border-bottom: none;
+    width: 80%;
+}
+
+.text-uppercase {
+    margin-top: 5%;
+}
+
+.box {
+    margin: 20px;
+    position: relative;
+    width: 400px;
+    height: 300px;
+    background: rgba(0,0,0,0.75);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+
+
+.box::before
+{
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background-image: conic-gradient(transparent, transparent, transparent, #44C553);
+    animation: animate 4s linear infinite;
+}
+
+
+@keyframes animate
+{
+    0%
+    {
+        transform: rotate(0deg);
+    }
+    100%
+    {
+        transform: rotate(360deg);
+    }
+}
+
+.box .span
+{
+    position: absolute;
+    inset: 5px;
+    border-radius: 16px;
+    background: #0c1022;
+    z-index: 1;
+}

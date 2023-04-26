@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block content %}
+
+    <div class="row maker">
+      <div class="col-lg-8 col-md-10 mx-auto">
+
+<!--        Load ckeditor-->
+        {{ ckeditor.load() }}
+
+<!--        Configure the ckeditor to tell it which field in WTForm will need to be a CKEditor.-->
+        {{ ckeditor.config(name='body') }}
+
+<!--        Add WTF quickform-->
+        {{ wtf.quick_form(form, novalidate=True, button_map={"submit": "dark"}) }}
+      </div>
+    </div>
+
+{% endblock %}
