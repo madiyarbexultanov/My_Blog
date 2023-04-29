@@ -1,4 +1,5 @@
 import smtplib
+import os
 from datetime import date
 from functools import wraps
 from flask import Flask, render_template, request, flash, redirect, url_for
@@ -137,13 +138,13 @@ def contact_page():
         email = form.email.data
         message = form.message.data
         full_message = f'"Subject: New Form Filled\n\n"Name: {name}\nMail: {email}\n\nMessage: {message}'
-        my_email = "madiyarmakanov98@gmail.com"
-        password = "ygcdctzjfbvtsqyv"
+        my_email = os.getenv("SENDER")
+        password = os.getenv("PASSWORD")
         with smtplib.SMTP("smtp.gmail.com") as connection:
             connection.starttls()
             connection.login(user=my_email, password=password)
-            connection.sendmail(from_addr=my_email, to_addrs="bexultanovmadiyar@gmail.com", msg=full_message)
-            return render_template("contact.html", form=form, current_user=current_user, title="Contact me")
+            connection.sendmail(from_addr=my_email, to_addrs=os.getenv("MAIN_MAIL"), msg=full_message)
+            return  redirect(url_for("contact_page"))
     return render_template("contact.html", form=form, current_user=current_user, title="Contact me")
 
 
