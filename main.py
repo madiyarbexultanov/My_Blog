@@ -17,10 +17,10 @@ from forms import ContactForm, SearchForm, CommentForm
 app = Flask(__name__)
 ckeditor = CKEditor(app)
 bootstrap = Bootstrap(app)
-app.config['SECRET_KEY'] = 'cf72645db1e120cf269c96f4d74c5e4f'
+app.config['SECRET_KEY'] = os.environ.get("SECRET_KEY")
 
 # CONNECT TO DB
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///posts.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL")
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
