@@ -5,7 +5,7 @@
     {% for post in all_posts: %}
     <div class="box">
         <div class="span">
-            <div class="d-flex flex-column justify-content-start flexer">
+            <div class="d-flex flex-column justify-content-start post-box">
                 <a class="post-head" href="{{url_for('show_post', post_id=post['id']) }}">
                     <h2 class="post-title">{{post['title']}}</h2>
                     <h4 class="subheading">{{post['subtitle']}}</h4>

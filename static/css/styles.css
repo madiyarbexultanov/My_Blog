@@ -78,7 +78,19 @@ body {
 }
 
 .flexer {
-    padding: 5% 10%;
+    padding: 1% 5%;
+}
+
+.post-box {
+    padding: 15%;
+}
+
+.post-title-text {
+    text-align: center;
+}
+
+.post-title-text h2 {
+  line-height: 2;
 }
 
 .post-title {
@@ -87,11 +99,16 @@ body {
     margin: 0;
 }
 
+.post-text {
+    margin: 2% 10%;
+}
+
 .post-img {
     width: 70%;
     height: 70%;
     display: block;
-    margin: auto;
+    margin: 3% auto;
+    border-radius: 5%;
 }
 
 a {
